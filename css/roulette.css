@@ -20,6 +20,24 @@ a {
 	text-decoration: none;
 }
 
+nav {
+    text-align: right;
+    ul {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+        margin-top: 0;
+        li {
+            display: inline-block;
+            margin-left: 0.5em;
+            &:before {
+                content: ' /';
+                color: $h-color;
+            }
+        }
+    }
+}
+
 #addTimer{
     display: flex;
     align-content: center;
