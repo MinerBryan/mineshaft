@@ -16,8 +16,14 @@ h3 {
 }
 
 a {
-	color: #c40300;
-	text-decoration: none;
+    color: #c40300;
+    text-decoration: none;
+    border-bottom: 1px solid;
+    &:hover {
+        background-color: #c40300;    
+        color: #444;
+        
+    }
 }
 
 a[target="_blank"]::after {
@@ -47,12 +53,15 @@ nav {
     }
 }
 
+
+
+/*
 #addTimer{
     display: flex;
     align-content: center;
     justify-content: center;
 }
-
+*/
 input[type=number]{
     width: 180px;
 }
