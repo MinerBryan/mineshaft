@@ -113,7 +113,80 @@
 				}, 50)
 				}, 5500)
 		}
+	function removeName(playerToRemove){
+				bets[playerToRemove] = 0;
+				document.getElementById("n"+playerToRemove).remove();
+				amountOfPlayers--;
+				refreshRoulette();
+		}
 
-		//)
+		function clearAll(winnerToClear){
+			if(winnerToClear == -1){
+				document.getElementById("winners").innerHTML = "";
+				return true;
+			} else {
+				document.getElementById("w"+winnerToClear).innerHTML = "";
+			}
+		}
+		
+		function addName() {
+			var node = document.createElement("LI");
+			var name = document.getElementById("inputName").value
+			document.getElementById("inputName").value = ""
+			if(name != ""){
+				var textnode = document.createTextNode(name);
+				let color = colors[rand(0,colors.length-1)];
+				node.style.backgroundColor = color;
+				node.className = "playerName";
+				node.id = "n" + bets.length;
+				(function(value){
+        			node.addEventListener("click", function() {removeName(value);}, false);})(bets.length);
+
+				node.appendChild(textnode);
+				document.getElementById("names").appendChild(node);
+				bets.push([name, color]);
+
+				amountOfPlayers++;
+				refreshRoulette();
+			}
+		}
+
+		var amountOfPlayers = 0;
+
+		function refreshRoulette(){
+			let roulette = document.getElementById("fillMeUpDaddy");
+			roulette.innerHTML = "";
+			order = [];
+
+			if(amountOfPlayers <= 0){
+				return 0;
+			}
+
+			for(var i = 0; i < amountOfBoxes; i++){
+					var randomPlayer = rand(0, bets.length);
+					while(bets[randomPlayer] == 0){
+						randomPlayer = rand(0, bets.length);
+					}
+					order.push(randomPlayer);
+					var node = document.createElement("div");
+					var h3 = document.createElement("h3");
+					h3.innerHTML = bets[randomPlayer][0];
+					node.style.backgroundColor = bets[randomPlayer][1];
+					node.appendChild(h3);
+					roulette.appendChild(node);
+				}
+		}
+
+		document.getElementById("inputName").addEventListener("keyup", function(event){
+			if(event.keyCode == 13){
+				document.getElementById("addButton").click();
+			}
+		})
+		document.getElementById("max").addEventListener("keyup", function(event){
+			if(event.keyCode == 13){
+				addTimer();
+			}
+		})
+	</script>
 	</script>
 </html>
