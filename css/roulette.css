@@ -88,7 +88,16 @@ blockquote {
     }
 }
 
-
+footer {
+    padding: 10px;
+    border-top: 1px dashed #c40300;
+    p {
+        display: inline-block;
+        span {
+            color: palevioletred;
+        }
+    }
+}
 
 
 /*
