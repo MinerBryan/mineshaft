@@ -5,14 +5,18 @@ body, html {
     background-color: #000000;
 }
 
-#addTimer{
-    display: flex;
-    align-content: center;
-    justify-content: center;
+title {
+	color: #c40300;
 }
 
 h1,h2,h3,h4,h5,h6 {
 	color: #c40300;
+}
+
+#addTimer{
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 input[type=number]{
