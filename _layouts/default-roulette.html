@@ -1,10 +1,26 @@
-<!DOCTYPE html> 
+---
+layout: compress
+---
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>Roulette</title>
-		<link rel="shortcut icon" type="image/png" href="shotterudLogo.png">
-		<link rel="stylesheet" type="text/css" href="css/roulette.css">
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>{{ page.title }} - {{site.title}}</title>
+	  <link rel="stylesheet" href="{{site.baseurl}}/css/roulette.css">
 	</head>
+	
+	<body>
+	<header>
+	    <nav>
+	        <ul>
+	            <li><a href="{{site.baseurl}}/">Home</a></li>
+	            <li><a href="{{site.baseurl}}/about">About</a></li>
+	            <li><a href="{{site.baseurl}}/contact">Contact</a></li>
+	        </ul>
+	    </nav>
+	    <a class="title-a" href="{{site.baseurl}}/"><h1 class="title">{{site.title}}</h1></a>
+	</header>
   
   {{content}}
   
