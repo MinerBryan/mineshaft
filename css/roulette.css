@@ -12,7 +12,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #c40300;
+    background-color: #ffffff;
 }
 
 ::-webkit-scrollbar-track {
@@ -27,7 +27,7 @@ body, html {
 }
 
 h1 {
-	color: #c40300;
+	color: #ffffff;
 }
 
 h3 {
@@ -39,7 +39,7 @@ a {
     text-decoration: none;
     border-bottom: 1px solid;
     &:hover {
-        background-color: #c40300;    
+        background-color: #ffffff;    
         color: #444;
         
     }
@@ -51,7 +51,7 @@ a[target="_blank"]::after {
 
 
 header {
-     border-bottom: 1px dashed #c40300;
+     border-bottom: 1px dashed #ffffff;
 }
 
 nav {
@@ -66,7 +66,7 @@ nav {
             margin-left: 0.5em;
             &:before {
                 content: ' /';
-                color: #c40300;
+                color: #ffffff;
             }
         }
     }
@@ -82,7 +82,7 @@ code, pre {
 }
 
 blockquote {
-    border-left: 1px solid #c40300;
+    border-left: 1px solid #ffffff;
     padding-left: 1em;
 }
 .title-a {
@@ -109,7 +109,7 @@ blockquote {
 
 footer {
     padding: 10px;
-    border-top: 1px dashed #c40300;
+    border-top: 1px dashed #ffffff;
     p {
         display: inline-block;
         span {
@@ -147,7 +147,7 @@ input[type=number]{
 
 .shotterudTitle{
     font-size: 94px;
-    font-color: #c40300;
+    font-color: #ffffff;
     z-index: 1;
 }
 
