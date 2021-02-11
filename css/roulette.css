@@ -289,8 +289,19 @@ button {
             transform: rotateX(10deg);
   }
   
+  #addButton:hover {
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba( 160, 160, 160, 0.2 );
+    
+    -webkit-transform: rotateX(10deg);
+       -moz-transform: rotateX(10deg);
+        -ms-transform: rotateX(10deg);
+            transform: rotateX(10deg);
+  }
+
   button:active {
     top: 0px;
     box-shadow: 0px 0px 0px rgba( 160, 160, 160, 0.0 );
     background: rgb(130, 130, 130);
   }
+
