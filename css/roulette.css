@@ -31,7 +31,7 @@ h1 {
 }
 
 h3 {
-	color: #000000;
+	color: #bababa;
 }
 
 a {
@@ -193,14 +193,14 @@ li, .winners > div {
     right: 15%;
     height: 400px;
     max-width: 1500px;
-    overflow-x: hidden;
+    overflow-x: visible;
 }
 
 .roulette {
     top: 10px;
     position: absolute;
     display: flex;
-    overflow: hidden;
+    overflow: visible;
     flex-wrap: nowrap;
     transition-duration: 5s;
     transition-timing-function: ease-in-out;
