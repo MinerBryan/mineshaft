@@ -95,7 +95,7 @@ blockquote {
     }
     
     &:hover > .title {
-        color: #60c17d;
+        color: #000000;
     }
 }
 
