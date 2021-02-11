@@ -193,14 +193,14 @@ li, .winners > div {
     right: 15%;
     height: 400px;
     max-width: 1500px;
-    overflow-x: visible;
+    overflow-x: hidden;
 }
 
 .roulette {
     top: 10px;
     position: absolute;
     display: flex;
-    overflow: visible;
+    overflow: hidden;
     flex-wrap: nowrap;
     transition-duration: 5s;
     transition-timing-function: ease-in-out;
@@ -237,7 +237,6 @@ li, .winners > div {
     position: absolute;
     background-color: black;
     height: 100px;
-    left: 180px;
     z-index: 1;
 }
 
