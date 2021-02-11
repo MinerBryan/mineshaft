@@ -237,6 +237,7 @@ li, .winners > div {
     position: absolute;
     background-color: black;
     height: 100px;
+    left: 50%;
     z-index: 1;
 }
 
