@@ -23,7 +23,7 @@ body, html {
 	padding: 0;
 	margin: 0;
     font-family: 'Source Code Pro', "Courier New", Courier, monospace; 
-    background-color: #828282;
+    background-color: #0e0e0e;
 }
 
 h1 {
@@ -260,10 +260,10 @@ button {
     font-size: 30px;
     font-family: 'Source Code Pro', "Courier New", Courier, monospace; 
     border-radius: 4px;
-    border-bottom: 1px solid rgba( 28, 227, 125, 0.5 );
-    background: rgb(209, 209, 209);
+    border-bottom: 1px solid rgba( 80, 80, 80, 0.5 );
+    background: rgb(100, 100, 100);
     color: #fff;
-    box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.1 );
+    box-shadow: 0px 0px 0px rgba( 80, 80, 80, 0.1 );
     
     -webkit-transform: translateZ(0);
        -moz-transform: translateZ(0);
@@ -282,7 +282,7 @@ button {
   
   #startButton:hover {
     top: -10px;
-    box-shadow: 0px 10px 10px rgba( 209, 209, 209, 0.2 );
+    box-shadow: 0px 10px 10px rgba( 160, 160, 160, 0.2 );
     
     -webkit-transform: rotateX(10deg);
        -moz-transform: rotateX(10deg);
@@ -292,6 +292,6 @@ button {
   
   button:active {
     top: 0px;
-    box-shadow: 0px 0px 0px rgba( 209, 209, 209, 0.0 );
-    background: rgb(209, 209, 209);
+    box-shadow: 0px 0px 0px rgba( 160, 160, 160, 0.0 );
+    background: rgb(130, 130, 130);
   }
