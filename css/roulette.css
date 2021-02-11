@@ -31,7 +31,7 @@ h1 {
 }
 
 h3 {
-	color: #bababa;
+	color: #60c17d;
 }
 
 a {
@@ -63,7 +63,7 @@ nav {
         margin-top: 0;
         li {
             display: inline-block;
-            margin-left: 0.5em;
+            margin-left: 5em;
             &:before {
                 content: ' /';
                 color: #ffffff;
@@ -83,7 +83,7 @@ code, pre {
 
 blockquote {
     border-left: 1px solid #ffffff;
-    padding-left: 1em;
+    padding-left: 5em;
 }
 .title-a {
     display: inline-block;
@@ -95,7 +95,7 @@ blockquote {
     }
     
     &:hover > .title {
-        color: #bababa;
+        color: #000000;
     }
 }
 
