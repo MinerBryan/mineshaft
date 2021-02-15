@@ -94,7 +94,7 @@ blockquote {
     display: inline-block;
     border: 1px dashed;
     padding: 2px 15px;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     h1:before{
         content: "";
     }
