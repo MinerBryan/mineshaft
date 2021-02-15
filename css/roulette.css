@@ -94,7 +94,7 @@ blockquote {
     display: inline-block;
     border: 1px dashed;
     padding: 2px 15px;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
     h1:before{
         content: "";
     }
@@ -106,7 +106,7 @@ blockquote {
 
 .title {
     display: block;
-    font-size: 1.35em;
+    font-size: 1em;
     &:after {
         content: "";
     }
