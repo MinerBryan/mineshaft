@@ -304,6 +304,15 @@ button {
         -ms-transform: rotateX(10deg);
             transform: rotateX(10deg);
   }
+  #clearButton:hover {
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba( 160, 160, 160, 0.2 );
+    
+    -webkit-transform: rotateX(10deg);
+       -moz-transform: rotateX(10deg);
+        -ms-transform: rotateX(10deg);
+            transform: rotateX(10deg);
+  }
 
   button:active {
     top: 0px;
