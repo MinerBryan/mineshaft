@@ -92,6 +92,7 @@
     function play () {
 			//add sound if you want
       var audio = new Audio('spin.mp3');
+      audio.volume = 0.5;
       audio.play();
 			var offset = rand(0, amountOfBoxes*140-180)+180;
 			document.getElementById("fillMeUpDaddy").style.left = -(offset-180) + "px";
