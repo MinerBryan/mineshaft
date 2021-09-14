@@ -178,6 +178,12 @@ input {
 button {
     font-size: 48px;
 }
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 80%;
+}
 .winners > div {
     float: left;
     min-width: 10%;
