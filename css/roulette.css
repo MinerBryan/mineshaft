@@ -20,10 +20,24 @@
 }
 
 body, html {
-	padding: 0;
-	margin: 0;
-    font-family: 'Source Code Pro', "Courier New", Courier, monospace; 
-    background-color: #0e0e0e;
+	font-family: $base-ff;
+    font-size: $base-fs;
+    font-weight: 300;
+    line-height: $base-lh;
+    background: #0e0e0e;
+    color: $text-color;
+    max-width: 800px;
+    margin: 0 auto;
+    text-rendering: optimizeLegibility;
+    border: 1px dashed $h-color;
+    border-top: none;
+
+    padding: 0 20px;
+    @include media-query($on-palm) {
+            border: none;
+            padding: 10px;
+    }
+
 }
 
 h1 {
@@ -124,13 +138,7 @@ footer {
 }
 
 
-/*
-#addTimer{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
-*/
+
 input[type=number]{
     width: 180px;
 }
