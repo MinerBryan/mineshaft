@@ -173,7 +173,7 @@ input {
 button {
     font-size: 48px;
 }
-.winners > div {
+li, .winners > div {
     float: left;
     min-width: 10%;
     list-style: none;
