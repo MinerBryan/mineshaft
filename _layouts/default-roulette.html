@@ -22,7 +22,7 @@
 	{{content}}
   
 <body onload="init()">
-	//This creates the Title and the custom input boxes
+	<!--This creates the Title and the custom input boxes-->
 	<center>
 		<div>
 			<h1 class="shotterudTitle">Roulette</h1>
@@ -36,7 +36,7 @@
 			</ul>
 		</div>
 	</center>
-	//This creates the roulette wheel
+	<!--This creates the roulette wheel-->
 	<div class="rouletteContainer">
 		<div class="line">
 		</div>
@@ -44,14 +44,14 @@
 		</div>
 	</div>
 	<br><br><br><br><br><br><br><br>
-	//This creates the Start or Spin button
+	<!--This creates the Start or Spin button-->
 	<center>
 		<div>
 			<button id="startButton" onclick="play()">Roll</button>
 		</div>
 	</center>
 	<br><br>
-	//This creates the Clear Button
+	<!--This creates the Clear Button-->
 	<div>
 		<center>
 			<button id="clearButton" onclick="clearAll(-1)">Clear history</button>
@@ -65,7 +65,7 @@
 {% include analytics.html %}
 </body>
 <script>
-	//Creates temporary elements an fills the array with them, ready for spinning
+	<!--Creates temporary elements an fills the array with them, ready for spinning-->
 	var amountOfBoxes = 100;
 	var order = [];
 	function init(){
@@ -94,18 +94,18 @@
 	var width = 80;
 	var bets = [];
 	
-	//This is the Play Function, where everything is handled
+	<!--This is the Play Function, where everything is handled-->
 	function play () {
-		//add sound if you want
+		<!--add sound if you want-->
 		var audio = new Audio('spin.mp3');
 		audio.volume = 0.5;
 		audio.play();
 		
-		//I Have No Idea
+		<!--I Have No Idea-->
 		var offset = rand(0, amountOfBoxes*140-180)+180;
 		document.getElementById("fillMeUpDaddy").style.left = -(offset-180) + "px";
 		
-		//Chooses the Random answer, and spins the wheel.
+		<!--Chooses the Random answer, and spins the wheel.-->
 		let chosenPlayer = document.createElement("div");
 		chosenPlayer.style.backgroundColor = bets[order[parseInt(offset/140)]][1];
 		chosenPlayer.innerHTML = bets[order[parseInt(offset/140)]][0];
@@ -119,7 +119,7 @@
 		}, 5500)
 	}
 	
-	//Removes from the list of elements
+	<!--Removes from the list of elements-->
 	function removeName(playerToRemove){
 		bets[playerToRemove] = 0;
 		document.getElementById("n"+playerToRemove).remove();
@@ -127,7 +127,7 @@
 		refreshRoulette();
 	}
 	
-	//Clears all winning elements
+	<!--Clears all winning elements-->
 	function clearAll(winnerToClear){
 		if(winnerToClear == -1){
 			document.getElementById("winners").innerHTML = "";
@@ -137,7 +137,7 @@
 		}
 	}
 	
-	//adds element to contendor list
+	<!--adds element to contendor list-->
 	function addName() {
 		var node = document.createElement("LI");
 		var name = document.getElementById("inputName").value
