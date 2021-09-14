@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
 * {
     box-sizing: border-box;
     text-rendering: geometricPrecision;
@@ -20,24 +26,23 @@
 }
 
 body, html {
-	font-family: $base-ff;
-    font-size: $base-fs;
-    font-weight: 300;
-    line-height: $base-lh;
-    background: #0e0e0e;
-    color: $text-color;
-    max-width: 800px;
-    margin: 0 auto;
-    text-rendering: optimizeLegibility;
-    border: 1px dashed $h-color;
-    border-top: none;
+	font-family: 'Source Code Pro';
+    	font-size: 17px;
+    	font-weight: 300;
+    	line-height: 1.7;
+    	background: #0e0e0e;
+    	color: #bababa;
+    	max-width: 800px;
+    	margin: 0 auto;
+    	text-rendering: optimizeLegibility;
+    	border: 1px dashed #ffffff;
+    	border-top: none;
 
-    padding: 0 20px;
-    @include media-query($on-palm) {
+    	padding: 0 20px;
+    	@include media-query(600px) {
             border: none;
             padding: 10px;
-    }
-
+	}
 }
 
 h1 {
