@@ -125,7 +125,7 @@ blockquote {
 
 .title {
     display: block;
-    font-size: 1em;
+    font-size: 1.35em;
     &:after {
         content: "";
     }
