@@ -39,10 +39,10 @@ body, html {
     	border-top: none;
 
     	padding: 0 20px;
-    	@include media-query(600px) {
-            border: none;
-            padding: 10px;
-	}
+    	//@include media-query(600px) {
+        //    border: none;
+        //    padding: 10px;
+	//}
 }
 
 h1 {
