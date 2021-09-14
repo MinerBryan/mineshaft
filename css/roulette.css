@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
 * {
     box-sizing: border-box;
     text-rendering: geometricPrecision;
@@ -177,12 +172,6 @@ input {
 
 button {
     font-size: 48px;
-}
-ul{
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    width: 80%;
 }
 .winners > div {
     float: left;
