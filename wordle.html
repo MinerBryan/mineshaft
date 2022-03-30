@@ -128,24 +128,16 @@
     */
     
     function startGame(){
-				document.getElementById("result").style.color = "#7bc470";
+	document.getElementById("result").style.color = "#7bc470";
         document.getElementById("result").innerHTML = "Game Started";
         newWord();
         document.addEventListener('keyup', checkKeyType);
         document.getElementById("Keyboard").addEventListener('click', keyboardInput);
-        CLog("Key Event Listeners added.");
-    }
-    
-    function CLog(LogText){
-        document.getElementById("console").innerHTML = "\n" + document.getElementById("console").innerHTML + LogText;
     }
     
     function newWord(){
-        CLog("newWord(); called");
-        //const wordList = ["abash","bloat"];
         const theIndex = Math.floor(Math.random() * wordList.length);
         theWord = wordList[theIndex];
-        CLog("Word: " + theWord);
     }
     
     function keyboardInput(e) {
@@ -300,7 +292,7 @@
                         colorKey(box.innerHTML, borderList[leng]);
                     }
                     
-                    // Move onto new row or game failure - terribly done thought
+                    // Move onto new row or game failure - terribly done though
                     if(curRow == "A"){
                         curRow = "B";
                     }
@@ -330,8 +322,7 @@
                 
             }
         }
-        else{//If it isn't, state that that it's not a vlid word
-            //Incorrect Word Stuff
+        else{//If it isn't, state that that it's not a valid word
             messageBox = document.getElementById("result");
             messageBox.style.color = "#d63024";
             messageBox.innerHTML = "Not a valid input.";
