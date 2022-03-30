@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+body{
+    font-family: 'Source Code Pro';
+    color: #333333;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 300px) {
+    body {
+        font-size: 15px;
+    }
+}
