@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+body{
+    font-family: 'Source Code Pro';
+    color: #333333;
+    font-size: 20px;
+}
+
+table {
+    max-width: 320px;
+    max-height: 320px;
+    border-spacing: 10px;
+    width: 65%;
+    height: 65%;
+    font-size: 25px;
+}
+tr{
+    height: 50px;
+}
+td{
+    border: 3.5px solid;
+    border-color: #d4d4d4;
+    text-align: center;
+    padding: 1px;
+    width: 50px;
+}
+
+#Keyboard{
+    max-width: 320px;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#result{
+    font-family: 'Source Code Pro';
+    padding-bottom: 5px;
+}
+
+.secondRow{
+    margin: 5px;
+}
+.keyboard-button{
+    border-radius: 4px;
+    font-family: 'Source Code Pro';
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: rgb(100, 100, 100);
+    min-width: 10px;
+    min-height: 10px;
+    padding: 7px;
+    border: 0;
+    margin-left: -2.5px;
+    margin-right: -2.5px;
+    
+    cursor: pointer;
+}
+.keyboard-button:hover{
+    filter: invert(75%);
+}
+.console{
+    font-size: 10px;
+    font-family: 'Source Code Pro';
+}
+@media screen and (max-width: 450px) {
+    table{
+        max-width: 300px;
+        width: 75%;
+    }
+    
+    tr{
+        height: 40px;
+    }
+    td{
+        max-width: 40px;
+    }
+}
+@media screen and (max-width: 300px) {
+    body {
+        font-size: 15px;
+    }
+    
+    table{
+        max-width: 280px;
+        width: 90%;
+    }
+    tr{
+        height: 35px;
+    }
+    td{
+        font-size: 20px;
+        width: 35px;
+    }
+    
+    .keyboard-button{
+        font-size: 10px;
+    }
+}
