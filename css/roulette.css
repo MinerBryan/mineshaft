@@ -1,244 +1,99 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
-* {
-    box-sizing: border-box;
-    text-rendering: geometricPrecision;
-   
+body{
+    font-family: 'Source Code Pro';
+    color: #333333;
+    font-size: 20px;
 }
-::-webkit-scrollbar {
-    -webkit-appearance: none;
-    height: 5px;
-    width: 10px;
+div {
+    color: #000;
 }
-
-::-webkit-scrollbar-thumb {
-    background-color: #ffffff;
+h3{
+    margin-top: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    height: 100%;
+    max-height: 45px;
+    font-size: 25px;
 }
-
-::-webkit-scrollbar-track {
-    background-color: #000;
-}
-
-body, html {
-	font-family: 'Source Code Pro';
-    	font-size: 17px;
-    	font-weight: 300;
-    	line-height: 1.7;
-    	background: #0e0e0e;
-    	color: #bababa;
-    	max-width: 800px;
-    	margin: 0 auto;
-    	text-rendering: optimizeLegibility;
-    	border: 1px dashed #ffffff;
-    	border-top: none;
-
-    	padding: 0 20px;
-    	@include media-query(600px) {
-            border: none;
-            padding: 10px;
-	}
-}
-
-h1 {
-	color: #ffffff;
-}
-
-h2 {
-	color: #bababa;
-}
-
-h3 {
-	color: #000000;
-}
-
-h1,h2,h3 {
-	font-size: 20px;
-}
-
-a {
-    color: #ffffff;
-    text-decoration: none;
-    border-bottom: 1px solid;
-    &:hover {
-        background-color: #ffffff;    
-        color: #444;
-        
-    }
-}
-
-a[target="_blank"]::after {
-    content: " " url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" class=\"i-external\" viewBox=\"0 0 32 32\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"#0a5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"9.38%\"><path d=\"M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18\" /></svg>');
-}
-
-
-header {
-     border-bottom: 1px dashed #ffffff;
-}
-
-nav {
-    text-align: right;
-    ul {
-        list-style: none;
-        margin-left: 0;
-        padding-left: 0;
-        margin-top: 0;
-        li {
-            display: inline-block;
-            margin-left: 0.5em;
-            &:before {
-                content: ' /';
-                color: #ffffff;
-            }
-        }
-    }
-}
-
-code, pre {
-    overflow: auto;
-    font-size: 16px;
-    padding: 4px 10px;
-    border-radius: 5px;
-    background-color: rgb(29, 29, 29);
-    box-shadow: inset 0 0 10px #0a0a0a, inset 0 0 15px #000;
-}
-
-blockquote {
-    border-left: 1px solid #ffffff;
-    padding-left: 1em;
-}
-.title-a {
-    display: inline-block;
-    border: 1px dashed;
-    padding: 2px 15px;
-    margin-bottom: 1em;
-    h1:before{
-        content: "";
-    }
-    
-    &:hover > .title {
-        color: #000000;
-    }
-}
-
-.title {
-    display: block;
-    font-size: 1.35em;
-    &:after {
-        content: "";
-    }
-}
-
-footer {
-    padding: 10px;
-    border-top: 1px dashed #ffffff;
-    p {
-        display: inline-block;
-        span {
-            color: palevioletred;
-        }
-    }
-}
-
-
-
-input[type=number]{
-    width: 180px;
-}
-
-#minMax {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
-
-#arrow{
-    font-size: 40px;
-    margin: 0;
-}
-
-#minMax > div {
-    max-width: 50%;
-}
-
-.shotterudTitle{
-    font-size: 94px;
-    font-color: #ffffff;
-    z-index: 1;
-}
-
-input {
-    font-size: 40px;
-}
-
-button {
-    font-size: 48px;
-}
-li, .winners > div {
-    float: left;
-    min-width: 10%;
-    list-style: none;
-    font-size: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    line-height: 55px;
-}
-
 .winners{
-    position: absolute;
-    left: 10%;
-    right: 10%;
-    overflow: hidden;
-    width: 80%;
-}
-
-.playerName:hover{
-    cursor: pointer;
-    filter: drop-shadow(16px 16px 20px white) invert(75%);
-}
-
-.rouletteContainer{
-    position: absolute;
+    margin:auto;
+    display:inline-block;
+    border-color:: #111;
+    border-style: solid;
+    background: #444;
     left: 15%;
     right: 15%;
-    height: 300px;
-    max-width: 900px;
-    overflow-x: hidden;
+    padding: 0px;
+    max-height: 600px;
+    max-width: 60%;
+    min-width: 10%;
+    min-height: 55px;
 }
-
-.roulette {
-    top: 10px;
+.winners > div{
+    float: left;
+    padding-left:8px;
+    padding-right: 8px;
+    max-width: 100%;
+    list-style: none;
+    line-height: 55px;
+    border-style: solid;
+    border-width: 4px;
+}
+.contendor-list{
+    display: inline-block;
+    border-color: #111;
+    border-style: solid;
+    background: #444;
+    left: 15%;
+    right: 15%;
+    padding: 0px;
+    max-height: 600px;
+    max-width: 60%;
+    min-width: 10%;
+    min-height: 55px;
+    margin: auto;
+}
+ul{
+    margin: 20px;
+}
+li{
+    float: left;
+    padding-left:8px;
+    padding-right: 8px;
+    max-width: 100%;
+    list-style: none;
+    line-height: 55px;
+    border-style: solid;
+    border-width: 4px;
+}
+.playerName:hover{
+    cursor: pointer;
+    filter: invert(75%);
+    /*drop-shadow(16px 16px 20px white) */
+}
+.wheelContainer{
+    position: absolute;
+    border-style: solid;
+    border-color: #111111;
+    border-width: 10px;
+    border-radius: 4px;
+    background-color: #444;
+    height: 65px;
+    max-width: 90%;
+    left: 15%;
+    right: 15%;
+    overflow: hidden;
+    padding-top: 1px;
+}
+.wheel{
     position: absolute;
     display: flex;
     overflow: hidden;
     flex-wrap: nowrap;
     transition-duration: 5s;
     transition-timing-function: ease-in-out;
-    left:0;
-}
-
-.roulette:after {
-    content:"";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    border-left: 2px dotted #ff0000;
-    transform: translate(-50%);
-}
-
-.roulette > div{
-    width: 140px; 
-    min-width: 140px;
-    float: left;
-}
-
-.roulette > div > h3 {
-    height: 80px;
-    line-height: 80px;
-    text-align: center;
-    margin: 0;
-    font-size: 30px;
 }
 
 .line{
@@ -250,7 +105,14 @@ li, .winners > div {
     z-index: 1;
 }
 
-/* Reset */
+input {
+    font-size: 28px;
+}
+
+button {
+    font-size: 36px;
+}
+
 button {
     background: transparent;
     border: 0;
@@ -272,7 +134,7 @@ button {
     border-bottom: 1px solid rgba( 80, 80, 80, 0.5 );
     background: rgb(100, 100, 100);
     color: #fff;
-    box-shadow: 0px 0px 0px rgba( 80, 80, 80, 0.1 );
+    /*box-shadow: 0px 0px 0px rgba( 80, 80, 80, 0.1 );
     
     -webkit-transform: translateZ(0);
        -moz-transform: translateZ(0);
@@ -282,45 +144,44 @@ button {
     -webkit-transition: all 0.2s ease;
        -moz-transition: all 0.2s ease;
         -ms-transition: all 0.2s ease;
-            transition: all 0.2s ease;
+            transition: all 0.2s ease;*/
+  }
+  #clearButton{
+      display: block;
+      position: static;
   }
 
   #startButton{
     padding: 20px 38px;
   }
   
-  #startButton:hover {
-    top: -10px;
-    box-shadow: 0px 10px 10px rgba( 160, 160, 160, 0.2 );
-    
-    -webkit-transform: rotateX(10deg);
-       -moz-transform: rotateX(10deg);
-        -ms-transform: rotateX(10deg);
-            transform: rotateX(10deg);
-  }
+  button:hover {
+    cursor: pointer;
+    filter: invert(75%);
+    }
   
-  #addButton:hover {
-    top: -10px;
-    box-shadow: 0px 10px 10px rgba( 160, 160, 160, 0.2 );
-    
-    -webkit-transform: rotateX(10deg);
-       -moz-transform: rotateX(10deg);
-        -ms-transform: rotateX(10deg);
-            transform: rotateX(10deg);
-  }
-  #clearButton:hover {
-    top: -10px;
-    box-shadow: 0px 10px 10px rgba( 160, 160, 160, 0.2 );
-    
-    -webkit-transform: rotateX(10deg);
-       -moz-transform: rotateX(10deg);
-        -ms-transform: rotateX(10deg);
-            transform: rotateX(10deg);
-  }
 
   button:active {
     top: 0px;
     box-shadow: 0px 0px 0px rgba( 160, 160, 160, 0.0 );
     background: rgb(130, 130, 130);
   }
-
+@media screen and (max-width: 600px) {
+    h3{
+        font-size: 20px;
+    }
+    .wheelContainer{
+        max-width:100%;
+        border-width: 5px;
+        left: 0%;
+        right: 0%;
+    }
+}
+@media screen and (max-width: 400px) {
+    body {
+        font-size: 15px;
+    }
+    h3{
+        font-size: 15px;
+    }
+}
