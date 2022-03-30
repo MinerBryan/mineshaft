@@ -104,11 +104,6 @@
                 <button class="keyboard-button">Enter</button>
             </div>
         </div>
-        <div>
-            <p id = "console">
-                
-            </p>
-        </div>
     </center>
 </body>
 <script>
@@ -121,31 +116,39 @@
     let guessesLeft = 6;
     
     /* To Do:
-    - Add Dictionary
     - Cleanup Code
     - Make more Efficient //document.dispatchEvent(new KeyboardEvent('keyup', {'key': key }));
-    - Move site to Github
+    - add Toast or popups
+    - add directions
+    - improve new game/result functionality and display
     */
     
-    function startGame(){
+    function startGame(){ // Start initial game
 	document.getElementById("result").style.color = "#7bc470";
         document.getElementById("result").innerHTML = "Game Started";
         newWord();
+	
+	//Add Event Listeners
         document.addEventListener('keyup', checkKeyType);
         document.getElementById("Keyboard").addEventListener('click', keyboardInput);
     }
     
-    function newWord(){
+    function newWord(){ // Function that generates a new word
         const theIndex = Math.floor(Math.random() * wordList.length);
         theWord = wordList[theIndex];
     }
     
+	// Function that gathers onscreen keyboard input
     function keyboardInput(e) {
         let key = e.target;
+		
+		// Make sure it's a keyboard button and not the outer portions of the keyboard element
         if(!key.classList.contains("keyboard-button")){
             return;
         }
         key = key.textContent;
+		
+		//Check which key
         if(guessesLeft != 0){
             if(key == "Del"){
                 delPressed();
@@ -164,9 +167,10 @@
         }
     }
     
+	// Physical Keyboard input
     function checkKeyType(e) {
-        let keyPressed = String(e.keyCode);
-        document.getElementById("result").innerHTML = "";
+        let keyPressed = String(e.keyCode); // ASCII value of input
+        document.getElementById("result").innerHTML = ""; // Clear Result Box
         if(guessesLeft != 0) {
             if(keyPressed >= 65 && keyPressed <= 90){ // 65=A, 90=Z
                 letterPressed(e.key);
@@ -187,7 +191,8 @@
     
     function newGame(){
         document.getElementById("result").innerHTML = "Game Started";
-        newWord();
+        newWord(); // Generate new word
+		// Loop which clears the board
         for(let i = 0; i < 6; i++){
             for(let j = 0; j < 5; j++){
                 box = document.getElementById("ABCDEF".substring(i,i+1)+String(j+1));
@@ -197,6 +202,7 @@
                 box.style.borderColor = "#d4d4d4";
             }
         }
+		//Reset Variables and the Keyboard
         resetKeyboard();
         gameOver = false
         guessesLeft = 6;
@@ -204,21 +210,23 @@
         curRow = "A";
     }
     
+	//Delete letter function
     function delPressed(){
         if(parseInt(curBox) != 1) { //Where curBox is currently empty box
-            curBox = (parseInt(curBox)-1).toString();
-            document.getElementById(curRow+curBox).innerHTML = "";
+            curBox = (parseInt(curBox)-1).toString(); // sets curBox to prior box
+            document.getElementById(curRow+curBox).innerHTML = ""; // Clears Box
         }
     }
     
+	// Letter pressed/entered function
     function letterPressed(theKey){
-        if(parseInt(curBox) < 6){ //Where curBox is currently empty box
-            document.getElementById(curRow+curBox).innerHTML = String(theKey);
-            curBox = (parseInt(curBox)+1).toString();
+        if(parseInt(curBox) < 6){ // curBox = 6 means full row, 6 is out of bounds
+            document.getElementById(curRow+curBox).innerHTML = String(theKey); // fill box with value
+            curBox = (parseInt(curBox)+1).toString(); // move onto next box
         }
     }
     
-    
+    // Function which displays if you won or lost
     function gameResult(theResult){
         if(theResult){
             for(let k = 0; k < 5; k++){
@@ -342,6 +350,7 @@
         }
     }
     
+	// Function which resets the onscreen keyboard
     function resetKeyboard(){
         const buttonList = document.getElementsByClassName("keyboard-button");
         for(let b = 0; b< buttonList.length;b++){
