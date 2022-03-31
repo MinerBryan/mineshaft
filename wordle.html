@@ -148,7 +148,7 @@
         key = key.textContent;
 		
 		//Check which key
-        if(guessesLeft != 0){
+        if(guessesLeft != 0 && !gameOver){
             if(key == "Del"){
                 delPressed();
             }
@@ -170,7 +170,7 @@
     function checkKeyType(e) {
         let keyPressed = String(e.keyCode); // ASCII value of input
         document.getElementById("result").innerHTML = ""; // Clear Result Box
-        if(guessesLeft != 0) {
+        if(guessesLeft != 0 && !gameOver) {
             if(keyPressed >= 65 && keyPressed <= 90){ // 65=A, 90=Z
                 letterPressed(e.key);
             }
