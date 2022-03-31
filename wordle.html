@@ -128,8 +128,8 @@
         newWord();
 	
 	//Add Event Listeners
-        document.addEventListener('keyup', checkKeyType);
-        document.getElementById("Keyboard").addEventListener('click', keyboardInput);
+        document.addEventListener('keyup', physicalKeyboard);
+        document.getElementById("Keyboard").addEventListener('click', screenKeyboard);
     }
     
     function newWord(){ // Function that generates a new word
@@ -138,55 +138,39 @@
     }
     
 	// Function that gathers onscreen keyboard input
-    function keyboardInput(e) {
-        let key = e.target;
-		
-		// Make sure it's a keyboard button and not the outer portions of the keyboard element
-        if(!key.classList.contains("keyboard-button")){
-            return;
-        }
-        key = key.textContent;
-		
-		//Check which key
-        if(guessesLeft != 0 && !gameOver){
-            if(key == "Del"){
-                delPressed();
-            }
-            else if(key == "Enter"){
-                if(gameOver){
-                    newGame();
-                }
-                else{
-                    enterPressed();
-                }
-            }
-            else if (key.match(/[a-z]/gi)){
-                letterPressed(key);
-            }
-        }
-    }
+    function screenKeyboard(e){
+		const keyButton = e.target;
+		if(!keyButton.classList.contains("keyboard-button")){
+			return;
+		}
+		checkKeyType(keyButton.textContent);
+	}
+	
+	// Function that gathers physical keyboard input
+	function physKeyboard(e){
+		checkKeyType(e.key);
+	}
     
-	// Physical Keyboard input
-    function checkKeyType(e) {
-        let keyPressed = String(e.keyCode); // ASCII value of input
-        document.getElementById("result").innerHTML = ""; // Clear Result Box
-        if(guessesLeft != 0 && !gameOver) {
-            if(keyPressed >= 65 && keyPressed <= 90){ // 65=A, 90=Z
-                letterPressed(e.key);
-            }
-            else if(keyPressed == 8 || keyPressed == 46) {// 46 = Delete, 8 = Backspace
-                delPressed();
-            }
-        }
-        if(keyPressed == 13){ // 13 = Enter
-            if(gameOver){
-                newGame();
-            }
-            else{
-                enterPressed();
-            }
-        }
-    }
+	// Figures out which button was pressed and what to do
+	function checkKeyType(keyPressed) {
+		document.getElementById("result").innerHTML = "";
+		if (keyPressed == "Enter") { // 13 = Enter
+			if (gameOver) {
+				newGame();
+			}
+			else {
+				enterPressed();
+			}
+		}
+		else if (guessesLeft != 0 && !gameOver) {
+			if (keyPressed == "Del" || keyPressed == "Backspace" || keyPressed == "Delete") {// 46 = Delete, 8 = Backspace
+				delPressed();
+			}
+			else if (keyPressed.match(/[a-z]/gi)) { // 65=A, 90=Z
+				letterPressed(keyPressed);
+			}
+		}
+	}
     
     function newGame(){
         document.getElementById("result").innerHTML = "Game Started";
