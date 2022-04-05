@@ -252,7 +252,7 @@
                     let resultList = ["","","","",""];
                     // Check or Prioritize the correctly placed letters to ensure the proper output
                     for(let green = 0; green < 5; green++){
-                        if(guessedWord.substring(green,green+1) === tempWord.substring(green,green+1)){
+                        if(guessedWord.substring(green,green+1) == tempWord.substring(green,green+1)){
                             resultList[green] = "#7bc470";
                             borderList[green] = "#67ab5c";
                             tempWord = tempWord.substring(0,green) + String(green) + tempWord.substring(green+1,5);
@@ -326,9 +326,7 @@
         for(let v = 0; v < buttonList.length; v++){
             if (buttonList.item(v).textContent == letter){
                 if(buttonList.item(v).style.background != "rgb(103, 171, 92)"){
-                    if(buttonList.item(v).style.background != "rgb(232, 196, 65)"){
-                        buttonList[v].style.background = bgCol;
-                    }
+                    buttonList[v].style.background = bgCol;
                 }
             }
         }
