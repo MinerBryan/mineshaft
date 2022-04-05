@@ -166,7 +166,7 @@
 			if (keyPressed == "Del" || keyPressed == "Backspace" || keyPressed == "Delete") {// 46 = Delete, 8 = Backspace
 				delPressed();
 			}
-			else if (keyPressed.match(/[a-z]/gi)) { // 65=A, 90=Z
+			else if (keyPressed.match(/[a-z]/gi)  && keyPressed.length == 1) { // 65=A, 90=Z
 				letterPressed(keyPressed);
 			}
 		}
