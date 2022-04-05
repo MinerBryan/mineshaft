@@ -115,6 +115,7 @@
     let guessesLeft = 6;
     
     /* To Do:
+    - Combine green/yellow/grey coloration loops in enterPressed() function
     - Cleanup Code
     - Make more Efficient
     - add Toast or popups
@@ -262,7 +263,7 @@
                     
                     for(let lett = 0; lett < 5; lett++){
                         for(let ter = 0; ter < 5; ter++){
-                            if(lett != ter && guessedWord.substring(lett,lett+1) == tempWord.substring(ter,ter+1)){
+                            if(lett != ter && guessedWord.substring(lett,lett+1) == tempWord.substring(ter,ter+1)  && resultList[lett] != "#7bc470"){
                                 borderList[lett] = "#e8c441";
                                 resultList[lett] = "#ffd94d";//"#FFD849";
                                 tempWord = tempWord.substring(0,ter) + String(ter+4) + tempWord.substring(ter+1,5);
