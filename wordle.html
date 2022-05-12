@@ -21,7 +21,7 @@
     <center>
         <br>
         <div>
-            <table class="guessTable">
+            <table id="guessTable">
                 <tr>
                     <td id="A1"></td>
                     <td id="A2"></td>
@@ -130,13 +130,18 @@
 	//Add Event Listeners
         document.addEventListener('keyup', physicalKeyboard);
         document.getElementById("Keyboard").addEventListener('click', screenKeyboard);
+		document.getElementById("guessTable").addEventListener('click', tappedBox);
     }
     
     function newWord(){ // Function that generates a new word
         const theIndex = Math.floor(Math.random() * wordList.length);
         theWord = wordList[theIndex];
     }
-    
+    function tappedBox(e){
+		if(e.target.id == curRow+((parseInt(curBox)-1).toString())){
+			delPressed();
+		}
+	}
 	// Function that gathers onscreen keyboard input
     function screenKeyboard(e){
 		const keyButton = e.target;
@@ -197,7 +202,9 @@
     function delPressed(){
         if(parseInt(curBox) != 1) { //Where curBox is currently empty box
             curBox = (parseInt(curBox)-1).toString(); // sets curBox to prior box
-            document.getElementById(curRow+curBox).innerHTML = ""; // Clears Box
+			document.getElementById(curRow+curBox).innerHTML = ""; // Clears Box
+			//document.getElementById(curRow + curBox).style.background = "#ffffff"; Potential to change BG in future
+			document.getElementById(curRow + curBox).style.borderColor = "#d4d4d4";
         }
     }
     
@@ -205,6 +212,8 @@
     function letterPressed(theKey){
         if(parseInt(curBox) < 6){ // curBox = 6 means full row, 6 is out of bounds
             document.getElementById(curRow+curBox).innerHTML = String(theKey); // fill box with value
+			//document.getElementById(curRow + curBox).style.background = "#e8e8e8"; Potential to change BG in future
+			document.getElementById(curRow + curBox).style.borderColor = "#bbbbbb";
             curBox = (parseInt(curBox)+1).toString(); // move onto next box
         }
     }
@@ -283,25 +292,11 @@
                         colorKey(box.innerHTML, borderList[leng]);
                     }
                     
-                    // Move onto new row or game failure - terribly done though
-                    if(curRow == "A"){
-                        curRow = "B";
-                    }
-                    else if(curRow == "B"){
-                        curRow = "C";
-                    }
-                    else if(curRow == "C"){
-                        curRow = "D";
-                    }
-                    else if(curRow == "D"){
-                        curRow = "E";
-                    }
-                    else if(curRow == "E"){
-                        curRow = "F";
-                    }
-                    else if(curRow == "F"){
-                        gameResult(false);
-                    }
+                    // Move onto new row or game failure
+					curRow = "ABCDEFG"["ABCDEFG".indexOf(curRow)+1];
+					if(curRow == "G"){
+						gameResult(false);
+					}
                     curBox = String(1); // Reset current box
                 }
             }
@@ -338,6 +333,5 @@
             buttonList[b].style.background = "#646464";
         }
     }
-    
     
 </script>
