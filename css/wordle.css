@@ -22,7 +22,8 @@ td{
     border-color: #d4d4d4;
     text-align: center;
     padding: 1px;
-    width: 50px;
+    width: 43.6px;
+    height: 43.6px;
 }
 
 .Keyboard{
@@ -65,14 +66,17 @@ td{
     font-size: 10px;
     font-family: 'Source Code Pro';
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
     table{
         max-width: 300px;
         width: 75%;
     }
     
     tr{
-        height: 40px;
+        max-width: 36px;
+        max-height: 36px;
+        height: 36px;
+        width: 36px;
     }
     td{
         max-width: 40px;
