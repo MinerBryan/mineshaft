@@ -240,92 +240,91 @@
         }
     }
     
-    
     function enterPressed(){
-        //Check if the entireRow is filled
-        if (curBox == "6"){
-			
-            //If it is, Turn it into a string
-            let guessedWord = "";
-            for(let h = 0; h < 5; h++){
-                guessedWord += document.getElementById(curRow+String(h+1)).innerHTML.toLowerCase();
-            }
-			
+		//Check if the entireRow is filled
+		if (curBox != "6"){//If it isn't, state that that it's not a valid word
+			messageBox = document.getElementById("result");
+			messageBox.style.color = "#d63024";
+			messageBox.innerHTML = "Not a valid input.";
+		}
+		else{ //If it is full, Turn it into a string
+			let userGuess = "";
+			for(let h = 0; h < 5; h++){
+				userGuess += document.getElementById(curRow+String(h+1)).innerHTML.toLowerCase();
+			}
+
 			// First check if it's in the approved wordlist
-            if(wordList.indexOf(guessedWord) > -1){
-				
-				// Then check if they correctly guess the word
-                if(guessedWord == theWord){
-                    gameResult(true);
-                }
-                else{// If not, check each letter
-                    guessesLeft--;
-                    let tempWord = theWord;
-                    let borderList = ["","","","",""];
-                    let resultList = ["","","","",""];
-					
-                    // First cancel out the green, or matching letters
-                    for(let green = 0; green < 5; green++){
-                        if(guessedWord.substring(green,green+1) == tempWord.substring(green,green+1)){
-							//These set the style
-                            resultList[green] = "#7bc470";
-                            borderList[green] = "#67ab5c";
-							//These replace the letter with the index number so it's not used for later checks
-                            tempWord = tempWord.substring(0,green) + String(green) + tempWord.substring(green+1,5);
-                            guessedWord = guessedWord.substring(0,green) + String(green) + guessedWord.substring(green+1,5);
-                        }
-                    }
-                    
-                    //Check each letter in both words against eachother
-                    for(let lett = 0; lett < 5; lett++){
-                        for(let ter = 0; ter < 5; ter++){
-							//We are ensuring they aren't the same index, as thats matching
-							//And we are ensuring it doesn't have a green style already
-                            if(lett != ter && guessedWord.substring(lett,lett+1) == tempWord.substring(ter,ter+1)  && resultList[lett] != "#7bc470"){
-                                borderList[lett] = "#e8c441";
-                                resultList[lett] = "#ffd94d";//"#FFD849";
-                                tempWord = tempWord.substring(0,ter) + String(ter+4) + tempWord.substring(ter+1,5);
-                                guessedWord = guessedWord.substring(0,lett) + String(lett+4) + guessedWord.substring(lett+1,5);
-                            }
-							//If it doesn't have a yellow or green styling already, make it grey.
-                            else if (resultList[lett] != "#ffd94d" && resultList[lett] != "#7bc470"){
-                                resultList[lett] = "#dadada"; //dbdbdb e6e6e6e
-                                borderList[lett] = "#c1c1c1";
-                            }
-                        }
-                    }
-                    
-					//Now use the two style lists above to set the boxes style on the page
-                    for(let leng = 0; leng < resultList.length; leng++){
-                        box = document.getElementById(curRow+String(leng+1));
-                        box.style.color = "#ffffff";
-                        box.style.background = resultList[leng];
-                        box.style.borderColor = borderList[leng];
-                        colorKey(box.innerHTML, borderList[leng]);
-                    }
-                    
-                    // Move onto new row or game failure
-					curRow = "ABCDEFG"["ABCDEFG".indexOf(curRow)+1];
-					if(curRow == "G"){
-						gameResult(false);
-					}
-                    curBox = String(1); // Reset current box
-                }
-            }
-            else{//If not, tell them it's an invalid word
-                //Incorrect Word Stuff
-                messageBox = document.getElementById("result");
-                messageBox.style.color = "#d63024";
-                messageBox.innerHTML = "Not a valid input.";
-                
-            }
-        }
-        else{//If it isn't, state that that it's not a valid word
-            messageBox = document.getElementById("result");
-            messageBox.style.color = "#d63024";
-            messageBox.innerHTML = "Not a valid input.";
-        }
-    }
+			if(wordList.indexOf(userGuess) < -1){//If not, tell them it's an invalid word
+				//Incorrect Word Stuff
+				messageBox = document.getElementById("result");
+				messageBox.style.color = "#d63024";
+				messageBox.innerHTML = "Not a valid input.";
+			}
+			else{
+				// Then check if they correctly guessed the word
+				if(userGuess == theWord){
+					gameResult(true);
+				}
+				else{// If not, check each letter
+					checkLetters(userGuess);
+				}
+			}
+		}
+	}
+
+	function checkLetters(guessedWord){
+		guessesLeft--;
+		let tempWord = theWord;
+		let borderList = ["","","","",""];
+		let resultList = ["","","","",""];
+
+		// First cancel out the green, or matching letters
+		for(let green = 0; green < 5; green++){
+			if(guessedWord.substring(green,green+1) == tempWord.substring(green,green+1)){
+				//These set the style
+				resultList[green] = "#7bc470";
+				borderList[green] = "#67ab5c";
+				//These replace the letter with the index number so it's not used for later checks
+				tempWord = tempWord.substring(0,green) + String(green) + tempWord.substring(green+1,5);
+				guessedWord = guessedWord.substring(0,green) + String(green) + guessedWord.substring(green+1,5);
+			}
+		}
+
+		//Check each remaining letter in both words against eachother
+		for(let lett = 0; lett < 5; lett++){
+			for(let ter = 0; ter < 5; ter++){
+				//We are ensuring they aren't the same index, as thats matching
+				//And we are ensuring it doesn't have a green style already
+				if(lett != ter && guessedWord.substring(lett,lett+1) == tempWord.substring(ter,ter+1)  && resultList[lett] != "#7bc470"){
+					borderList[lett] = "#e8c441";
+					resultList[lett] = "#ffd94d";//"#FFD849";
+					tempWord = tempWord.substring(0,ter) + String(ter+4) + tempWord.substring(ter+1,5);
+					guessedWord = guessedWord.substring(0,lett) + String(lett+4) + guessedWord.substring(lett+1,5);
+				}
+				//If it doesn't have a yellow or green styling already, make it grey.
+				else if (resultList[lett] != "#ffd94d" && resultList[lett] != "#7bc470"){
+					resultList[lett] = "#dadada"; //dbdbdb e6e6e6e
+					borderList[lett] = "#c1c1c1";
+				}
+			}
+		}
+
+		//Now use the two style lists above to set the boxes style on the page
+		for(let leng = 0; leng < resultList.length; leng++){
+			box = document.getElementById(curRow+String(leng+1));
+			box.style.color = "#ffffff";
+			box.style.background = resultList[leng];
+			box.style.borderColor = borderList[leng];
+			colorKey(box.innerHTML, borderList[leng]);
+		}
+
+		// Move onto new row or game failure
+		curRow = "ABCDEFG"["ABCDEFG".indexOf(curRow)+1];
+		if(curRow == "G"){
+			gameResult(false);
+		}
+		curBox = String(1); // Reset current box
+	}
     
     function colorKey(letter, bgCol){
         const buttonList = document.getElementsByClassName("keyboard-button");
