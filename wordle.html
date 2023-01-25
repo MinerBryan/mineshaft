@@ -254,7 +254,7 @@
 			}
 
 			// First check if it's in the approved wordlist
-			if(wordList.indexOf(userGuess) < -1){//If not, tell them it's an invalid word
+			if(wordList.indexOf(userGuess) <= -1){//If not, tell them it's an invalid word
 				//Incorrect Word Stuff
 				messageBox = document.getElementById("result");
 				messageBox.style.color = "#d63024";
