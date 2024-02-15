@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" id='stylesheet' href="css/dark/main.css">
+    <link rel="icon" href="icons/site-favicon.png">
 </head>
 
 <header>
        <a href="index.html">The Mineshaft</a>
+       <img id="mode-toggle" onclick='toggleMode()' src='icons/dark-mode.png'></img>
 </header>
 
 <nav>
@@ -17,7 +19,7 @@
 </nav>
 
 <body>
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/dark/about.css">
     <center>
         <br>
         <div>This is my first - mostly from scratch - website hosted via github.</div>
@@ -27,3 +29,4 @@
         <div>And I have no socials I actively use so low chance of finding me there.</div>
     </center>
 </body>
+<script src='javascript/site-mode.js'></script>
