@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+body{
+    font-family: 'Source Code Pro';
+    color: #fafafa;
+    font-size: 20px;
+}
+
+table {
+    max-width: 320px;
+    max-height: 320px;
+    border-spacing: 10px;
+    width: 65%;
+    height: 65%;
+    font-size: 25px;
+}
+tr{
+    height: 50px;
+}
+td{
+    border: 3.5px solid;
+    border-color: #3a3a3a;
+    text-align: center;
+    padding: 1px;
+    width: 43.6px;
+    height: 43.6px;
+    background: #444444;
+}
+
+td.grey{
+  background: #3d3d3d;
+  color: #fafafa;
+  border-color: #343434;
+}
+
+td.green{
+  background: #50a444;
+  color: #ffffff;
+  border-color: #408336;
+}
+
+td.yellow{
+  background: #dbb21b;
+  color: #ffffff;
+  border-color: #af8e15;
+}
+
+.Keyboard{
+    max-width: 320px;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#result{
+    font-family: 'Source Code Pro';
+    padding-bottom: 5px;
+}
+
+.secondRow{
+    margin: 5px;
+}
+.keyboard-button{
+    border-radius: 4px;
+    font-family: 'Source Code Pro';
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #3c3c3c;
+    min-width: 10px;
+    min-height: 10px;
+    padding: 7px;
+    border: 0;
+    margin-left: -2.5px;
+    margin-right: -2.5px;
+    touch-action: none;
+    cursor: pointer;
+}
+.keyboard-button.green{
+    background: #50a444;
+}
+.keyboard-button.yellow{
+  background: #dbb21b;
+}
+.keyboard-button.grey{
+  background: #343434;
+}
+.keyboard-button:hover{
+    filter: invert(75%);
+}
+.console{
+    font-size: 10px;
+    font-family: 'Source Code Pro';
+}
+@media screen and (max-width: 500px) {
+    table{
+        max-width: 300px;
+        width: 75%;
+    }
+
+    tr{
+        max-width: 36px;
+        max-height: 36px;
+        height: 36px;
+        width: 36px;
+    }
+    td{
+        max-width: 40px;
+    }
+}
+@media screen and (max-width: 400px) {
+    body {
+        font-size: 15px;
+    }
+
+    table{
+        max-width: 280px;
+        width: 90%;
+    }
+    tr{
+        height: 35px;
+    }
+    td{
+        font-size: 20px;
+        width: 35px;
+    }
+    .Keyboard{
+        max-width: 100%;
+        width: 100%;
+    }
+    .keyboard-button{
+        padding: 9px;
+        font-size: 20px;
+    }
+}
