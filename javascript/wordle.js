@@ -31,7 +31,7 @@ function newWord(){ // Function that generates a new word
     const lineNum = Math.floor(Math.random() * afla);
 
     //Using the fetch api, gather the file and it's contents
-    fetch('answers.txt').then(response => response.text()).then(data => {
+    fetch('text/answers.txt').then(response => response.text()).then(data => {
         //data.slice(Previous Line * word length w/ /n, Desire Line * word length w/ /n - /n character)
         //data.slice(end index of previous line w/ '/n', end index of cur line w/o '/n')
         theWord = data.slice((lineNum-1)*6,lineNum*6-1);
@@ -147,7 +147,7 @@ async function enterPressed(){
         for(let h = 0; h < 5; h++){
             userGuess += document.getElementById(curRow+String(h+1)).innerHTML.toLowerCase();
         }
-        const guessIndex = await fetch('words.txt').then(response => response.text()).then(data => {return data.indexOf(userGuess); }).catch(error => console.error('Error reading file:', error));
+        const guessIndex = await fetch('text/words.txt').then(response => response.text()).then(data => {return data.indexOf(userGuess); }).catch(error => console.error('Error reading file:', error));
         // First check if it's in the approved wordlist
         console.log("valid: "+ guessIndex);
         if(guessIndex > -1){//If not, tell them it's an invalid word
@@ -169,7 +169,7 @@ async function enterPressed(){
 }
 function getUserIndex(userWord){
     console.log("calling fetch");
-    fetch('words.txt')
+    fetch('text/words.txt')
         .then(response => response.text())
         .then(data => {//using n, it gets the word using limitations and displays it
         console.log("return")
