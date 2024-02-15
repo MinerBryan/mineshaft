@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" id ='stylesheet' href="css/dark/main.css">
+    <link rel="icon" href="icons/site-favicon.png">
 </head>
 
 <header>
        <a href="index.html">The Mineshaft</a>
+       <img id="mode-toggle" onclick='toggleMode()' src='icons/dark-mode.png'></img>
 </header>
 
 <nav>
@@ -17,10 +19,11 @@
 </nav>
 
 <body>
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/dark/home.css">
     <center>
         <br><br>
         <div>Welcome to the Mineshaft!</div><br><br><br>
         <div>Not much here. Just a wordle recreation.</div>
     </center>
 </body>
+<script src='javascript/site-mode.js'></script>
