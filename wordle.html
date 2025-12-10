@@ -6,71 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" id='stylesheet' href="css/dark/main.css">
     <link rel="icon" href="icons/site-favicon.png">
+    <script src='javascript/site-mode.js'></script>
+    <script src='javascript/wordle.js'></script>
 </head>
 
-<header>
-       <a href="index.html">The Mineshaft</a>
-       <img id="mode-toggle" onclick='toggleMode()' src='icons/dark-mode.png'></img>
-</header>
-
-<nav>
-    <ul>
-      <a href="index.html">Home</a>
-      <a href="wordle.html" class="active">Wordle</a>
-      <a href="about.html">About</a>
-    </ul>
-</nav>
-
 <body onload="startGame()">
-    <link rel="stylesheet" id='body-stylesheet' href="css/dark/wordle.css">
-    <center>
-        <br>
+
+    <header>
+        <a href="index.html">The Mineshaft</a>
+        <img alt="Toggle Site Color Scheme" id="mode-toggle" onclick='toggleMode()' src='icons/dark-mode.png'>
+    </header>
+ 
+    <nav>
         <div>
-            <table id="guessTable">
-                <tr>
-                    <td id="A1"></td>
-                    <td id="A2"></td>
-                    <td id="A3"></td>
-                    <td id="A4"></td>
-                    <td id="A5"></td>
-                </tr>
-                <tr>
-                    <td id="B1"></td>
-                    <td id="B2"></td>
-                    <td id="B3"></td>
-                    <td id="B4"></td>
-                    <td id="B5"></td>
-                </tr>
-                <tr>
-                    <td id="C1"></td>
-                    <td id="C2"></td>
-                    <td id="C3"></td>
-                    <td id="C4"></td>
-                    <td id="C5"></td>
-                </tr>
-                <tr>
-                    <td id="D1"></td>
-                    <td id="D2"></td>
-                    <td id="D3"></td>
-                    <td id="D4"></td>
-                    <td id="D5"></td>
-                </tr>
-                <tr>
-                    <td id="E1"></td>
-                    <td id="E2"></td>
-                    <td id="E3"></td>
-                    <td id="E4"></td>
-                    <td id="E5"></td>
-                </tr>
-                <tr>
-                    <td id="F1"></td>
-                    <td id="F2"></td>
-                    <td id="F3"></td>
-                    <td id="F4"></td>
-                    <td id="F5"></td>
-                </tr>
-            </table>
+            <a href="index.html">Home</a>
+            <a href="wordle.html" class="active">Wordle</a>
+            <a href="about.html">About</a>
         </div>
+    </nav>
+
+    <main>
+        <link rel="stylesheet" id='body-stylesheet' href="css/dark/wordle.css">
+
+        <br>
+        <table id="guessTable">
+            <tr>
+                <td id="A1"></td>
+                <td id="A2"></td>
+                <td id="A3"></td>
+                <td id="A4"></td>
+                <td id="A5"></td>
+            </tr>
+            <tr>
+                <td id="B1"></td>
+                <td id="B2"></td>
+                <td id="B3"></td>
+                <td id="B4"></td>
+                <td id="B5"></td>
+            </tr>
+            <tr>
+                <td id="C1"></td>
+                <td id="C2"></td>
+                <td id="C3"></td>
+                <td id="C4"></td>
+                <td id="C5"></td>
+            </tr>
+            <tr>
+                <td id="D1"></td>
+                <td id="D2"></td>
+                <td id="D3"></td>
+                <td id="D4"></td>
+                <td id="D5"></td>
+            </tr>
+            <tr>
+                <td id="E1"></td>
+                <td id="E2"></td>
+                <td id="E3"></td>
+                <td id="E4"></td>
+                <td id="E5"></td>
+            </tr>
+            <tr>
+                <td id="F1"></td>
+                <td id="F2"></td>
+                <td id="F3"></td>
+                <td id="F4"></td>
+                <td id="F5"></td>
+            </tr>
+        </table>
         <div id="result"></div>
         <div id="Keyboard">
             <div class="firstRow">
@@ -108,7 +110,5 @@
                 <button class="keyboard-button" id="Del">Del</button>
             </div>
         </div>
-    </center>
+    </main>
 </body>
-<script src='javascript/site-mode.js'></script>
-<script src='javascript/wordle.js'></script>

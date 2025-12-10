@@ -6,27 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" id ='stylesheet' href="css/dark/main.css">
     <link rel="icon" href="icons/site-favicon.png">
+    <script src='javascript/site-mode.js'></script>
 </head>
 
-<header>
-       <a href="index.html">The Mineshaft</a>
-       <img id="mode-toggle" onclick='toggleMode()' src='icons/dark-mode.png'></img>
-</header>
 
-<nav>
-    <ul>
-      <a href="index.html" class="active">Home</a>
-      <a href="wordle.html">Wordle</a>
-      <a href="about.html">About</a>
-    </ul>
-</nav>
 
 <body>
-    <link rel="stylesheet" href="css/dark/home.css">
-    <center>
+    <header>
+        <a href="index.html">The Mineshaft</a>
+        <img alt="Toggle Site Color Scheme" id="mode-toggle" onclick='toggleMode()' src='icons/dark-mode.png'>
+    </header>
+
+    <nav>
+        <div>
+            <a href="index.html" class="active">Home</a>
+            <a href="wordle.html">Wordle</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+    <main>
+        <link rel="stylesheet" href="css/dark/home.css">
         <br><br>
         <div>Welcome to the Mineshaft!</div><br><br><br>
         <div>Not much here. Just a wordle recreation.</div>
-    </center>
+    </main>
 </body>
-<script src='javascript/site-mode.js'></script>

@@ -1,29 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+/* Default: 500px */
+html{
+    font-size: 16px;
+}
 
-body{
+main {
+    height: 100%;
+    width: 100%;
     font-family: 'Source Code Pro';
     color: #fafafa;
     font-size: 20px;
 }
 
 table {
-    max-width: 320px;
-    max-height: 320px;
-    border-spacing: 10px;
-    width: 65%;
-    height: 65%;
+    border-spacing: 4px;
+    max-width: 21rem;
+    max-height: 23rem;
+    width: auto;
+    height: auto;
     font-size: 25px;
+    display: inline-flex;
+    justify-content: center;
 }
 tr{
-    height: 50px;
-}
+    /* max-height: 17%; */
+    padding: 2px 4px;
+    margin: auto;
+} 
 td{
     border: 3.5px solid;
-    border-color: #3a3a3a;
+    border-color: #323232;
     text-align: center;
     padding: 1px;
-    width: 43.6px;
-    height: 43.6px;
+    width: 3rem;
+    height: 3rem;
     background: #444444;
 }
 
@@ -45,32 +55,36 @@ td.yellow{
   border-color: #af8e15;
 }
 
-.Keyboard{
-    max-width: 320px;
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 #result{
     font-family: 'Source Code Pro';
-    padding-bottom: 5px;
+    margin-bottom:5px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    font-size: 25px;
+    height: 1.4em;
+}
+
+.Keyboard{
+    width: 100%;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
 }
 
 .secondRow{
-    margin: 5px;
+    margin: 0.3125rem;
 }
 .keyboard-button{
     border-radius: 4px;
     font-family: 'Source Code Pro';
-    font-size: 15px;
     font-weight: 500;
     text-transform: uppercase;
     color: #ffffff;
-    background: #3c3c3c;
-    min-width: 10px;
-    min-height: 10px;
+    background: #323232;
+    min-width: 0.625rem;
+    min-height: 0.625rem;
     padding: 7px;
     border: 0;
     margin-left: -2.5px;
@@ -90,48 +104,67 @@ td.yellow{
 .keyboard-button:hover{
     filter: invert(75%);
 }
-.console{
-    font-size: 10px;
-    font-family: 'Source Code Pro';
-}
-@media screen and (max-width: 500px) {
-    table{
-        max-width: 300px;
-        width: 75%;
-    }
 
-    tr{
-        max-width: 36px;
-        max-height: 36px;
-        height: 36px;
-        width: 36px;
+/* @media screen and (max-width: 500px) {
+    table{
     }
-    td{
-        max-width: 40px;
-    }
-}
+} */
 @media screen and (max-width: 400px) {
-    body {
+    main {
         font-size: 15px;
     }
 
     table{
-        max-width: 280px;
+        border-spacing: 6px;
+        width: 80%;
+    }
+
+    /* tr {
+        max-height: 40px;
+    } */
+
+    td{
+        font-size: 15px;
+        max-width: 40px;
+        max-height: 40px;
+    }
+
+    /* .Keyboard{
+        width: 100%;
+    } */
+    .keyboard-button{
+        padding: 7px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    table {
+        /* height: 75%; */
+        border-spacing: 4px;
         width: 90%;
     }
-    tr{
+
+    #result {
+        font-size: 15px;
+        height: 20px;
+    }
+
+    tr {
         height: 35px;
     }
-    td{
-        font-size: 20px;
-        width: 35px;
+
+    td {
+        font-size: 12px;
+        max-height: 100%;
+        /* height: fit-content; */
+        max-width: 35px;
+        padding: 0;
+        margin: auto;
     }
-    .Keyboard{
-        max-width: 100%;
-        width: 100%;
-    }
+
     .keyboard-button{
-        padding: 9px;
-        font-size: 20px;
+        font-size: 12px;
+        padding: 7px;
     }
 }

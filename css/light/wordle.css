@@ -5,7 +5,6 @@ body{
     color: #333333;
     font-size: 20px;
 }
-
 table {
     max-width: 320px;
     max-height: 320px;
@@ -13,6 +12,8 @@ table {
     width: 65%;
     height: 65%;
     font-size: 25px;
+    display: inline-grid;
+    align-items: center;
 }
 tr{
     height: 50px;
@@ -55,7 +56,10 @@ td.yellow{
 
 #result{
     font-family: 'Source Code Pro';
-    padding-bottom: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 25px;
+    height: 35px;
 }
 
 .secondRow{
